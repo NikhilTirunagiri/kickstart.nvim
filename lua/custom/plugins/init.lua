@@ -17,9 +17,9 @@ return {
       vim.opt.termguicolors = true
 
       -- setup nvim-tree
-      require("nvim-tree").setup({
+      require('nvim-tree').setup {
         sort = {
-          sorter = "case_sensitive",
+          sorter = 'case_sensitive',
         },
         view = {
           width = 30,
@@ -30,7 +30,7 @@ return {
         filters = {
           dotfiles = true,
         },
-      })
+      }
 
       -- Add keymap for space+e to toggle nvim-tree
       vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { desc = 'Toggle file [E]xplorer', silent = true })
@@ -75,5 +75,14 @@ return {
       -- Keymap to open lazygit
       vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { desc = 'Open Lazy[G]it', silent = true })
     end,
+  },
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' }, -- if you use the mini.nvim suite
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' },        -- if you use standalone mini plugins
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
   },
 }
