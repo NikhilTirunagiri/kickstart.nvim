@@ -181,7 +181,7 @@ vim.o.confirm = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- insert time.
-vim.keymap.set('n', '<leader>it', ':pu=strftime(\'%c\')<CR>', { desc = 'Insert time' })
+vim.keymap.set('n', '<leader>it', ":pu=strftime('%c')<CR>", { desc = 'Insert time' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })

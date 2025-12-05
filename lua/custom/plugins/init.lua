@@ -4,6 +4,22 @@
 -- See the kickstart.nvim README for more information
 return {
   {
+    'oysandvik94/curl.nvim',
+    cmd = { 'CurlOpen', 'CurlCollection', 'CurlClose' },
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+    keys = {
+      { '<leader>cc', '<cmd>CurlOpen<cr>', desc = 'Open curl tab (scoped to cwd)' },
+      { '<leader>co', '<cmd>CurlOpen global<cr>', desc = 'Open curl tab (global)' },
+      { '<leader>csc', '<cmd>CurlCollection scoped<cr>', desc = 'Pick scoped collection' },
+      { '<leader>cgc', '<cmd>CurlCollection global<cr>', desc = 'Pick global collection' },
+    },
+    config = function()
+      require('curl').setup {}
+    end,
+  },
+  {
     'nvim-tree/nvim-tree.lua',
     dependencies = {
       'nvim-tree/nvim-web-devicons',
